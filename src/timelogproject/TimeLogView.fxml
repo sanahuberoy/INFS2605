@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timelogproject.TimeLogController">
+   <children>
+      <ToolBar prefHeight="47.0" prefWidth="750.0">
+         <items>
+            <Button mnemonicParsing="false" text="Time Log" />
+            <Button mnemonicParsing="false" text="Kanban Board" />
+            <Button mnemonicParsing="false" text="Deep Focus" />
+            <Button mnemonicParsing="false" text="My Life" />
+            <Button mnemonicParsing="false" text="Daily Breakdown" />
+            <Button mnemonicParsing="false" text="Weekly Trends" />
+            <Button fx:id="aboutHelp" mnemonicParsing="false" text="About/Help" />
+         </items>
+      </ToolBar>
+      <Label fx:id="timelog" graphicTextGap="7.0" layoutX="27.0" layoutY="65.0" prefHeight="30.0" prefWidth="157.0" text="Time Log">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="selectCategory" layoutX="135.0" layoutY="204.0" prefHeight="27.0" prefWidth="157.0" promptText="Select Category" translateX="-3.0" translateY="15.0" />
+      <ColorPicker fx:id="colorPicker" layoutX="198.0" layoutY="122.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="99.0" translateX="-3.0" translateY="15.0" />
+      <TextArea fx:id="entryDescription" layoutX="32.0" layoutY="338.0" prefHeight="57.0" prefWidth="264.0" promptText="Entry Description" translateX="-3.0" translateY="15.0" />
+      <Label layoutX="33.0" layoutY="676.0" prefHeight="17.0" prefWidth="376.0" text="Task Priority (0 = Least Important, 100 = Most Important)" translateX="-3.0" translateY="15.0" />
+      <Slider fx:id="taskPriority" layoutX="51.0" layoutY="702.0" translateX="-3.0" translateY="15.0" />
+      <Label layoutX="32.0" layoutY="701.0" text="0 " translateX="-3.0" translateY="15.0" />
+      <Label fx:id="sliderIndicatorLabel" layoutX="194.0" layoutY="701.0" text="100" translateX="-3.0" translateY="15.0" />
+      <Button fx:id="addTask" layoutX="31.0" layoutY="735.0" mnemonicParsing="false" onAction="#saveTask" text="Add Task" translateX="-3.0" translateY="15.0" />
+      <Button fx:id="cleartask" layoutX="117.0" layoutY="735.0" mnemonicParsing="false" onAction="#clearTask" text="Clear" translateX="-3.0" translateY="15.0" />
+      <Label fx:id="dodatelabel" layoutX="32.0" layoutY="602.0" prefHeight="17.0" prefWidth="58.0" text="Do-Date " translateX="-3.0" translateY="15.0" />
+      <Label fx:id="duedatelabel" layoutX="32.0" layoutY="637.0" prefHeight="17.0" prefWidth="75.0" text="Due-Date " translateX="-3.0" translateY="15.0" />
+      <TextField fx:id="taskTitle" layoutX="30.0" layoutY="493.0" prefHeight="27.0" prefWidth="264.0" promptText="Task Title" translateX="-3.0" translateY="15.0" />
+      <TextArea fx:id="taskDescription" layoutX="30.0" layoutY="528.0" prefHeight="57.0" prefWidth="264.0" promptText="Task Description" translateX="-3.0" translateY="15.0" />
+      <Text fx:id="Category" layoutX="182.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" translateX="-3.0" translateY="15.0" />
+      <Accordion layoutX="253.0" layoutY="135.0" translateX="-3.0" translateY="15.0" />
+      <Text layoutX="32.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Category" translateX="-3.0" translateY="15.0" />
+      <Text layoutX="34.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert New Entry" translateX="-3.0" translateY="15.0" />
+      <Text layoutX="33.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert New Task" translateX="-3.0" translateY="15.0" />
+      <Button fx:id="addEntry" layoutX="31.0" layoutY="407.0" mnemonicParsing="false" onAction="#saveEntry" prefHeight="27.0" prefWidth="83.0" text="Add Entry" translateX="-3.0" translateY="15.0" />
+      <Button fx:id="addCategory" layoutX="332.0" layoutY="122.0" mnemonicParsing="false" onAction="#saveCategory" text="Create" translateX="-3.0" translateY="15.0" />
+      <Button fx:id="viewentries" layoutX="186.0" layoutY="407.0" mnemonicParsing="false" text="View All Entries" translateX="-3.0" translateY="15.0" />
+      <TextField fx:id="categoryLabel" layoutX="31.0" layoutY="122.0" prefHeight="27.0" prefWidth="157.0" promptText="Category Label" translateX="-3.0" translateY="15.0" />
+      <DatePicker fx:id="dueDatePicker" layoutX="172.0" layoutY="632.0" prefHeight="15.0" prefWidth="121.0" translateX="-3.0" translateY="15.0" />
+      <DatePicker fx:id="doDatePicker" layoutX="172.0" layoutY="596.0" prefHeight="15.0" prefWidth="121.0" translateX="-3.0" translateY="15.0" />
+      <Label fx:id="dodatelabel1" layoutX="31.0" layoutY="259.0" prefHeight="17.0" prefWidth="75.0" text="Start Time" />
+      <Label fx:id="dodatelabel11" layoutX="209.0" layoutY="259.0" prefHeight="17.0" prefWidth="12.0" text=":" />
+      <Label fx:id="dodatelabel12" layoutX="31.0" layoutY="294.0" prefHeight="17.0" prefWidth="75.0" text="End Time" />
+      <Label fx:id="DurationLabel" layoutX="135.0" layoutY="324.0" text="0" />
+      <Label fx:id="durationText" layoutX="31.0" layoutY="324.0" prefHeight="17.0" prefWidth="99.0" text="Duration (hrs)" />
+      <ComboBox fx:id="startTimeH" layoutX="132.0" layoutY="254.0" prefHeight="27.0" prefWidth="72.0" promptText="hh" />
+      <ComboBox fx:id="startTimeM" layoutX="217.0" layoutY="254.0" prefHeight="27.0" prefWidth="72.0" promptText="mm" />
+      <ComboBox fx:id="endTimeM" layoutX="217.0" layoutY="289.0" prefHeight="27.0" prefWidth="72.0" promptText="mm" />
+      <ComboBox fx:id="endTimeH" layoutX="132.0" layoutY="289.0" prefHeight="27.0" prefWidth="72.0" promptText="hh" />
+      <Label fx:id="dodatelabel111" layoutX="209.0" layoutY="294.0" prefHeight="17.0" prefWidth="12.0" text=":" />
+      <Line endX="360.0" layoutX="28.0" layoutY="181.0" stroke="#bbbbbb" />
+      <Line endX="360.0" layoutX="28.0" layoutY="466.0" stroke="#bbbbbb" />
+      <ListView layoutX="419.0" layoutY="111.0" prefHeight="665.0" prefWidth="297.0" />
+      <Button fx:id="clearentry" layoutX="121.0" layoutY="422.0" mnemonicParsing="false" onAction="#clearEntry" text="Clear" />
+      <Button fx:id="viewentries1" layoutX="175.0" layoutY="750.0" mnemonicParsing="false" text="View All Tasks" />
+      <Label fx:id="dodatelabel13" layoutX="31.0" layoutY="225.0" prefHeight="17.0" prefWidth="75.0" text="Category" />
+   </children>
+</AnchorPane>
